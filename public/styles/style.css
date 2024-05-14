@@ -39,15 +39,15 @@
 }
 
 /* === General Classes === */
-.extraBold {
+.extra-bold {
     font-weight: 900;
 }
 
-.capsLock {
+.caps-lock {
     text-transform: uppercase;
 }
 
-.inputTitle {
+.input-title {
     font-size: 16px;
     font-weight: bold;
 
