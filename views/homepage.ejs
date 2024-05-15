@@ -1,0 +1,81 @@
+<%- include('./partials/head', {current: '/'}); %>
+
+<header class="home">
+    <article>   
+        <div>
+            <h2 class="smallTitle">Platform</h2>
+            <h1 class="title">Buurt Initiatieven Amsterdam west</h1>
+            <a class="btn" href="#down">Bekijk initiatieven</a>
+        </div>
+    </article>
+    <div>
+        <picture>
+            <!-- Gebruik de .avif, als je dit type kent -->
+            <source srcset="/assets/images/deHallenGreen-min.png?format=avif" type="image/avif">
+            <!-- Gebruik de .webp, als je dat type kent -->
+            <source srcset="/assets/images/deHallenGreen-min.png?format=webp" type="image/webp">
+            <!-- En als je beide niet kent, of geen idee hebt wat <source> betekent, doe dan gewoon dit -->
+            <img src="/assets/images/deHallenGreen-min.png" alt="Foto van de Hallen Image">
+        </picture>
+
+    </div>
+</header>
+
+<main class="home">
+    <article id="down">
+        <blockquote>Initiatieven zijn vaak lastig te vinden. Om dit probleem op te lossen is dit digitaal platform ontwikkeld met een verzameling van diverse Buurtinitiatieven</blockquote>
+    </article>
+
+    <section class="services container">
+        
+        <div class="center">
+            <h3 class="smallTitle">Vraag en aanbod</h3>
+            <h2>Buurtinitatieven</h2>
+        </div>
+
+       <div class="buttonsService">
+            <p>Ontdek buurtinitiatieven door te klikken op "Vraag" of "Aanbod". Onder "Vraag" zie je buurtbewoners die hulp nodig hebben, terwijl onder "Aanbod" zij initiatieven aanbieden om anderen te helpen. Samen versterken we de buurt!</p>
+
+            <div>
+                <button id="vraagButton" class="btn">Vraag</button>
+                <button id="aanbodButton" class="btn">Aanbod</button>
+            </div>
+        </div>
+
+        <!-- Hier komen 3 initiatieven van type vraag te staan -->   
+        <section class="vraagContent">
+            <h3 class="type">Vraag</h3>
+
+            <div class="items">
+
+                <%- include('./partials/serviceVraag') %>    
+                    
+            </div>
+        </section>    
+        
+
+        <section class="aanbodContent">
+            <h3 class="type">Aanbod</h3>
+            <!-- Hier komen 3 initiatieven van type aanbod te staan -->
+            <div class="items">
+                    <!-- Laat alleen de service zien als het type een vraag is -->
+                    <%- include('./partials/serviceAanbod') %>
+            </div>
+        </section>
+
+        <a class="more" href="/vraag-aanbod">Bekijk vraag en aanbod</a>
+        
+    </section>
+
+
+    <section class="opdrachtAanvragen">
+        <div>
+            <h2>Zelf een opdracht aanvragen?</h2>
+            <p>Wil je iets vragen aan je mede-Amsterdammers of heb je iets aan te bieden aan de gemeenschap? Dat kan hier! Klik op de onderstaande knop om je vraag of aanbod te delen met de buurt. Samen maken we Amsterdam West een nog betere plek om te wonen.</p>
+    
+            <a class="btn" href="/opdracht-aanmelden">Aanvragen</a>
+        </div>
+    </section>
+</main>
+
+<%- include('./partials/foot') %>

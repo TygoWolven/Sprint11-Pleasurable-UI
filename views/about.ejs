@@ -1,0 +1,39 @@
+<%- include('./partials/head', {current: '/about'}); %>
+
+<ul class="breadcrumb">
+    <li><a href="/">Home</a></li>
+    <li>About</li>
+</ul>
+
+<header class="contact">
+
+    <section class="container">
+        <div>
+            <article>
+                <h3 class="smallTitle">Buurtinitiatief Amsterdam West</h3>
+                <h1>About</h1>
+                <p>Initiatieven zijn vaak lastig te vinden. Om dit probleem op te lossen is dit digitaal platform ontwikkeld met een verzameling van diverse Buurtinitiatieven.</p>
+
+                <p>Heeft u vragen? Stel gerust een vraag via onderstaande button.</p>
+
+                <a class="btn" href="/contact">Neem contact op</a>
+            </article>
+
+            <article>
+                <picture>
+                    <!-- Gebruik de .avif, als je dit type kent -->
+                    <source srcset="/assets/images/deHallenGreen-min.png?format=avif" type="image/avif">
+                    <!-- Gebruik de .webp, als je dat type kent -->
+                    <source srcset="/assets/images/deHallenGreen-min.png?format=webp" type="image/webp">
+                    <!-- En als je beide niet kent, of geen idee hebt wat <source> betekent, doe dan gewoon dit -->
+                    <img src="/assets/images/deHallenGreen-min.png" alt="Foto van de Hallen Image">
+                </picture>
+            </article>
+            
+        </div>
+        
+    </section>
+
+</header>
+
+<%- include('./partials/foot') %>
