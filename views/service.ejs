@@ -18,6 +18,7 @@
             <div class="description">
                 <%- service.long_description %>
             </div>
+
     
             <div class="buttons-container">
                 <a class="btn" href="#">Lees meer</a>
@@ -28,8 +29,11 @@
     
                     <button type="submit" class="like-button">
                         Vind ik leuk
+                        <i class='bx bxs-heart'></i>   
                     </button>
                 </form>
+
+                <p><%- include('./partials/likes', {service: service}) %> mensen vonden dit leuk</p>  
             </div>
         </article>
     

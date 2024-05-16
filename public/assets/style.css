@@ -197,30 +197,48 @@ form button {
     margin-bottom: 4rem;
 }
 
-.buttons-container {
-    display: flex;
-}
-
 .like-button {
     border: 3px solid var(--redColor);
     color: var(--redColor);
 
     border-radius: 4px;
-    margin-top: 1.5rem;
-    padding: 1rem 2rem;
+    margin: 1.5rem 0 0;
+    padding: 1rem 2rem 1rem 1rem;
 
     text-transform: uppercase;
-    text-align: center;
     background: none;
 
     font-family: Roboto;
     font-size: 1rem;
 
     transition: 0.5s ease;
+    position: relative;
+    overflow: hidden;
 }
+
+.like-button i {
+    font-size: 18px;
+    margin-left: 0.5rem;
+    color: var(--redColor);
+
+    transition: 0.4s ease;
+    position: absolute;
+    z-index: -10;
+}
+
 .like-button:hover {
-    background-color: var(--redColor);
     color: white;
+    cursor: pointer;
+
+    box-shadow: var(--redColor) 0px 7px 29px 0px;
+}
+
+.like-button:hover i {
+    scale: 30;
+}
+
+.like-button:active {
+    scale: 0.8;
 }
 
 /* PARTIALS HEAD */

@@ -4,6 +4,9 @@ let form = document.querySelector('form.like')
 // Luister naar het submit event
 form.addEventListener('submit', function(event) {
 
+	let likebutton = document.querySelector('.like-button i')
+	likebutton.classList.add('.active-like')
+
 	// Het this object refereert hier naar het formulier zelf
 
 	// Lees de data van het formulier in
@@ -54,8 +57,6 @@ form.addEventListener('submit', function(event) {
 		// En hier kun je bijvoorbeeld nog wat extra's doen om duidelijker te maken
 		// dat er iets gebeurd is op de pagina
 		
-		
-
 		// Een eventuele loading state haal je hier ook weer weg
 		form.classList.remove('is-loading')
 	});
