@@ -21,6 +21,7 @@ select {
     /* --mainColor: #f29338; */
     --mainColor: #3D5737;
     --mainColorHover: #2b3f26;
+    --redColor: rgb(200, 0, 0);
 
     --lightBackground: #efefef;
 }
@@ -191,6 +192,27 @@ form button {
     margin-bottom: 4rem;
 }
 
+.buttons-container {
+    display: flex;
+}
+
+.like-button {
+    border: 3px solid var(--redColor);
+    color: var(--redColor);
+    border-radius: 4px;
+    text-transform: uppercase;
+    text-align: center;
+    margin-top: 1.5rem;
+    padding: 1rem 2rem;
+    font-weight: 800;
+    background: none;
+
+    transition: 0.5s ease;
+}
+.like-button:hover {
+    background-color: var(--redColor);
+    color: white;
+}
 
 /* PARTIALS HEAD */
 nav {
