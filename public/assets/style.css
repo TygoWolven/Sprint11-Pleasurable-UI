@@ -1,13 +1,9 @@
-@font-face {
-    font-family: Roboto;
-    src: url(../fonts/Roboto-Medium.ttf);
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 html {
     scroll-behavior: smooth;
 }
