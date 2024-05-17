@@ -232,7 +232,6 @@ form button {
 }
 
 button {
-    background-color: white;
     border: none;
     margin: 1em;
     padding: 1em;
@@ -241,6 +240,9 @@ button {
 form {
     margin: 1em;
     padding: 1em;
+    background-color: gray;
+    border-radius: 50px;
+    width: 80px;
 }
 
 .likes {
@@ -493,89 +495,6 @@ article span {
     align-items: flex-start;
     justify-content: space-between;
     gap: .5rem;
-}
-
-form.like button:has(img),
-form.like button:has(svg) {
-    background: unset;
-    border: unset;
-    width: fit-content;
-
-    display: flex;
-    align-items: center;
-    gap: .25rem;
-    cursor: pointer;
-}
-
-form.like button img.heart,
-form.like button svg {
-    width: 1.5rem;
-    height: unset;
-}
-
-form.like span {
-    margin: unset;
-}
-
-.heartIcon {
-    /* fill: #FF7A6B; */
-    fill: var(--lightBackground);
-    transition: .2s ease;
-}
-
-#groupHeart:hover .heartIcon,
-.liked .heartIcon {
-    fill: red;
-}
-
-/* loading animation heart */
-.is-loading #heartIcon {
-    animation-delay: 0.9s;
-    animation-duration: 0.8s;
-    animation-name: beat;
-    animation-duration: 1s;
-    animation-iteration-count: infinite;
-}
-
-@keyframes pump {
-    0% {
-        transform: scale(1);
-    }
-
-    100% {
-        transform: scale(1.1);
-    }
-}
-
-@keyframes beat {
-    0% {
-        transform: scale(1)
-    }
-
-    50% {
-        transform: scale(0.6)
-    }
-}
-
-/* END LIKE BUTTON */
-
-.buttonsService {
-    width: 60%;
-    margin: 0 auto;
-    margin-top: 1.5rem;
-    text-align: center;
-}
-
-.buttonsService>div {
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
-    gap: 1rem;
-}
-
-.buttonsService button.active {
-    transition: ease-out;
-    background-color: var(--mainColorHover);
 }
 
 /* BREADCRUMBS */
