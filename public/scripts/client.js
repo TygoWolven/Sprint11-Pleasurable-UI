@@ -103,13 +103,29 @@ function showAanbodContent() {
 
 
 
-var likeButton = document.querySelector('.like button')
-var heartIcon = document.querySelector('.heartIcon')
+// var likeButton = document.querySelector('.like button')
+// var heartIcon = document.querySelector('.heartIcon')
 
-likeButton.addEventListener('click', liked);
+// likeButton.addEventListener('click', liked);
+
+// function liked() {
+// 	console.log("liked");
+
+// 	this.classList.add('liked');
+// }
+
+// New for feature like
+var likeButtons = document.querySelectorAll('.like button');
+var heartIcons = document.querySelectorAll('.heartIcon');
+
+likeButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        liked.call(this);
+    });
+});
 
 function liked() {
-	console.log("liked");
+    console.log("liked");
 
-	this.classList.add('liked');
+    this.classList.add('liked');
 }
