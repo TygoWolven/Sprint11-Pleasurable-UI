@@ -1,3 +1,8 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(./fonts/Montserrat-VariableFont_wght.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -11,6 +16,7 @@ body,
 input,
 textarea,
 select {
+    font-family: Montserrat;
     font-family: "Roboto", sans-serif; 
 }
 :root {
@@ -203,8 +209,6 @@ form button {
 
     text-transform: uppercase;
     background: none;
-
-    font-family: Roboto;
     font-size: 1rem;
 
     transition: 0.5s ease;
