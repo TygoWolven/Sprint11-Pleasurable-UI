@@ -18,8 +18,35 @@
             <div class="description">
                 <%- service.long_description %>
             </div>
+
+            <div class="featureLike">
+                <a class="btn" href="#">Lees meer</a>
+
+                <!-- Nieuwe feature like button -->
+                <form class="like" action="/" method="post">
+                    <input type="hidden" name="actie" value="like" />
+                    <input type="hidden" name="id" value="<%= service.id %>" />
+
+                    <button type="submit">
+                        <div>
+                            <?xml version="1.0" encoding="utf-8"?>
+                            <svg version="1.1" id="heartIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                    viewBox="0 0 26.6 24.6" style="enable-background:new 0 0 26.6 24.6;" xml:space="preserve">
+                                <g id="groupHeart">
+                                    <rect x="5.3" y="5.3" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.5154 13.3026)" class="heartIcon" width="16" height="16"/>
+                                    <circle id="heartTopLeft" class="heartIcon" cx="8" cy="8" r="8"/>
+                                    <circle id="heartTopRight" class="heartIcon" cx="18.6" cy="8" r="8"/>
+                                </g>
+                            </svg>
+                        </div>
+                        <!--  likes nummer  -->
+                        <%- include('./partials/likes', {service: service}) %>
+                    </button>
+                </form>
+                <!-- Einde feature -->
+            </div>
     
-            <a class="btn" href="#">Lees meer</a>
+            
         </article>
     
         <article>
