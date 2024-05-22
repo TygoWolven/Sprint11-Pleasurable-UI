@@ -1,8 +1,33 @@
+// Functie voor de 'Initiatieven'
+const listVraag = document.getElementById('listVraag'),
+      listAanbod = document.getElementById('listAanbod'),
+	  vraagButton = document.getElementById('vraagButton'),
+	  aanbodButton = document.getElementById('aanbodButton'),
+	  aanbodTitle = document.getElementById('titleAanbod'),
+	  vraagTitle = document.getElementById('titleVraag')
+
+function showList(val) {
+    if(val==1) {
+        listVraag.style.display='grid'
+        listAanbod.style.display='none'
+		vraagTitle.style.display='block'
+		aanbodTitle.style.display='none'
+    } if(val==2) {
+        listVraag.style.display='none'
+        listAanbod.style.display='grid'
+		vraagTitle.style.display='none'
+		aanbodTitle.style.display='block'
+    }
+}
+
 // Selecteer like formulier
 let form = document.querySelector('form.like')
 
 // Luister naar het submit event
 form.addEventListener('submit', function(event) {
+
+	let likebutton = document.querySelector('.like-button i')
+	likebutton.classList.add('.active-like')
 
 	// Het this object refereert hier naar het formulier zelf
 
@@ -54,8 +79,6 @@ form.addEventListener('submit', function(event) {
 		// En hier kun je bijvoorbeeld nog wat extra's doen om duidelijker te maken
 		// dat er iets gebeurd is op de pagina
 		
-		
-
 		// Een eventuele loading state haal je hier ook weer weg
 		form.classList.remove('is-loading')
 	});
@@ -67,49 +90,3 @@ form.addEventListener('submit', function(event) {
 	// automatisch terug naar de standaard POST, wat prima is.
 	event.preventDefault()
 })
-
-
-
-
-
-var vraagButton = document.querySelector('#vraagButton')
-var vraagContent = document.querySelector('.vraagAanbod')
-
-
-vraagButton.addEventListener('click', showVraagContent)
-
-function showVraagContent() {
-	console.log("klikt op de vraag button");
-
-	vraagContent.classList.toggle('active');
-
-	this.classList.toggle('active');
-}
-
-
-
-var aanbodButton = document.querySelector('#aanbodButton')
-var aanbodContent = document.querySelector('.aanbodContent')
-
-aanbodButton.addEventListener('click', showAanbodContent)
-
-function showAanbodContent() {
-	console.log("klikt op de aanbod button");
-	
-	aanbodContent.classList.toggle('active');
-
-	this.classList.toggle('active');
-}
-
-
-
-var likeButton = document.querySelector('.like button')
-var heartIcon = document.querySelector('.heartIcon')
-
-likeButton.addEventListener('click', liked);
-
-function liked() {
-	console.log("liked");
-
-	this.classList.add('liked');
-}
