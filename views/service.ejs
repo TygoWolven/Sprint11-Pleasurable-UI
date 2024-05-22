@@ -26,16 +26,28 @@
                 </div>
 
 
-                <div class="buttons-container">
-                    <a class="btn" href="#">Lees meer</a>
 
-
-
+                <div class="like-button">
+                    <div class="buttons-container">
+                        <a class="btn" href="#">Lees meer</a>
+                    </div>
                     <form class="like" action="/" method="post">
                         <input type="hidden" name="actie" value="like" />
                         <input type="hidden" name="id" value="<%= service.id %>" />
-                        <button type="submit" class="likes">
-                            likes</button>
+                        <button type="submit" class="heart click">
+                            <span>♥</span>
+                            <span>♥</span>
+                            <span>♥</span>
+                            <span>♥</span>
+                            <span>♥</span>
+                            <span>♥</span>
+                            <span>♥</span>
+                            <span>♥</span>
+                            <span>♥</span>
+                            <span>♥</span>
+                            <span>♥</span>
+                            <%= service.likes %>likes
+                        </button>
                     </form>
                 </div>
             </article>

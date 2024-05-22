@@ -2,10 +2,7 @@
 let form = document.querySelector('form.like')
 
 // Luister naar het submit event
-form.addEventListener('submit', function(event) {
-
-	let likebutton = document.querySelector('.like-button i')
-	likebutton.classList.add('.active-like')
+form.addEventListener('submit', function (event) {
 
 	// Het this object refereert hier naar het formulier zelf
 
@@ -33,30 +30,30 @@ form.addEventListener('submit', function(event) {
 		// https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 		body: new URLSearchParams(data)
 
-	}).then(function(response) {
+	}).then(function (response) {
 		// Als de server een antwoord geeft, krijgen we een stream terug
 		// We willen hiervan de text gebruiken, wat in dit geval HTML teruggeeft
 		return response.text()
 
-	}).then(function(responseHTML) {
+	}).then(function (responseHTML) {
 		// En de HTML kunnen we gebruiken om onze DOM aan te passen
 
 		//document.querySelector('body').innerHTML = responseHTML
-		//console.log(responseHTML)
-  
+		// console.log(responseHTML)
+
 		// Het is gelukt, neem de waarde uit de span en tel er een bij op
-		
+
 		if (document.startViewTransition) {
-			document.startViewTransition(function() {
-				document.querySelector('.likes').outerHTML = responseHTML
+			document.startViewTransition(function () {
+				document.querySelector('.heart').outerHTML = responseHTML
 			});
 		} else {
-			document.querySelector('.likes').outerHTML = responseHTML
+			document.querySelector('.heart').outerHTML = responseHTML
 		}
 
 		// En hier kun je bijvoorbeeld nog wat extra's doen om duidelijker te maken
 		// dat er iets gebeurd is op de pagina
-		
+
 		// Een eventuele loading state haal je hier ook weer weg
 		form.classList.remove('is-loading')
 	});
@@ -70,47 +67,15 @@ form.addEventListener('submit', function(event) {
 })
 
 
+const deButtons = document.querySelectorAll(".heart");
 
+function handleLikeButtonClick(event) {
+	const deButtonWaaropGekliktIs = event.currentTarget;
 
+	deButtonWaaropGekliktIs.classList.toggle("liefde");
 
-var vraagButton = document.querySelector('#vraagButton')
-var vraagContent = document.querySelector('.vraagAanbod')
-
-
-vraagButton.addEventListener('click', showVraagContent)
-
-function showVraagContent() {
-	console.log("klikt op de vraag button");
-
-	vraagContent.classList.toggle('active');
-
-	this.classList.toggle('active');
 }
 
-
-
-var aanbodButton = document.querySelector('#aanbodButton')
-var aanbodContent = document.querySelector('.aanbodContent')
-
-aanbodButton.addEventListener('click', showAanbodContent)
-
-function showAanbodContent() {
-	console.log("klikt op de aanbod button");
-	
-	aanbodContent.classList.toggle('active');
-
-	this.classList.toggle('active');
-}
-
-
-
-var likeButton = document.querySelector('.like button')
-var heartIcon = document.querySelector('.heartIcon')
-
-likeButton.addEventListener('click', liked);
-
-function liked() {
-	console.log("liked");
-
-	this.classList.add('liked');
-}
+deButtons.forEach(deButton => {
+	deButton.addEventListener("click", handleLikeButtonClick);
+});
