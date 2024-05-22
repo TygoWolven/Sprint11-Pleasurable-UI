@@ -20,17 +20,23 @@ select {
     font-family: "Roboto", sans-serif; 
 }
 :root {
+    /* Font Colors */
     --fontColor: #343434;
     --fontHoverColor: #5e5e5e;
     --fontColorMedium: #7b7b7b;
     --fontColorLight: #b5b5b5;
 
-    /* --mainColor: #f29338; */
+    /* Primary Colors */
     --mainColor: #3D5737;
     --mainColorHover: #2b3f26;
     --redColor: rgb(200, 0, 0);
 
+    /* Background Colors */
     --lightBackground: #efefef;
+
+    /* Paddings */
+    --smallPadding: 1em;
+    --mediumPadding: 1.5em;
 }
 
 h1 {
