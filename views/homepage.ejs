@@ -37,27 +37,35 @@
             <p>Ontdek buurtinitiatieven door te klikken op "Vraag" of "Aanbod". Onder "Vraag" zie je buurtbewoners die hulp nodig hebben, terwijl onder "Aanbod" zij initiatieven aanbieden om anderen te helpen. Samen versterken we de buurt!</p>
 
             <div>
-                <button id="vraagButton" class="btn">Vraag</button>
-                <button id="aanbodButton" class="btn">Aanbod</button>
+                <button id="vraagButton" 
+                        class="btn"
+                        onclick="showList(1)">
+                        Vraag
+                </button>
+                <button id="aanbodButton" 
+                        class="btn"
+                        onclick="showList(2)">
+                        Aanbod
+                </button>
             </div>
         </div>
 
         <!-- Hier komen 3 initiatieven van type vraag te staan -->   
         <section class="vraagContent">
-            <h3 class="type">Vraag</h3>
+            <h3 class="type" id="titleVraag">Vraag</h3>
 
-            <div class="items">
+            <div class="items" id="listVraag">
 
                 <%- include('./partials/serviceVraag') %>    
                     
             </div>
         </section>    
-        
+         
 
         <section class="aanbodContent">
-            <h3 class="type">Aanbod</h3>
+            <h3 class="type" id="titleAanbod">Aanbod</h3>
             <!-- Hier komen 3 initiatieven van type aanbod te staan -->
-            <div class="items">
+            <div class="items" id="listAanbod">
                     <!-- Laat alleen de service zien als het type een vraag is -->
                     <%- include('./partials/serviceAanbod') %>
             </div>
