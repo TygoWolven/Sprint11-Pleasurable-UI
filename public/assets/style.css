@@ -753,7 +753,38 @@ form h3 {
 }
 /* END CONTACT BLOCK */
 
+/* Animated Paper Airplane */
+.contactButton {
+    overflow: hidden;
+}
 
+.contactButton:hover #planeIcon {
+    transition: 0.2s ease;
+    scale: 1.2;
+}
+
+#planeIcon {
+    margin-left: 0.25em;
+    transition: 0.2s ease;
+}  
+
+.planeAnimation {
+    animation: planeFlight 1s forwards;
+}
+
+@keyframes planeFlight {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: rotateZ(20deg) translateY(0.4em);
+        scale: 1.4;
+    }
+    100% {  
+        transform: translateX(5em) translateY(-5em);
+        scale: 2.2;
+    }
+}
 
 /* RELATED PROJECTS */
 .relatedProjects h2 {
@@ -773,8 +804,6 @@ form h3 {
     text-transform: capitalize;
 }
 /* END DETAIL PAGINA */
-
-
 
 /* OVERIGE PAGINA  */
 header.smallHeader {
