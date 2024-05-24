@@ -28,6 +28,7 @@ function startAnimation () {
 	planeIcon.classList.add('planeAnimation')
 }
 
+
 // Selecteer like formulier
 let form = document.querySelector('form.like')
 

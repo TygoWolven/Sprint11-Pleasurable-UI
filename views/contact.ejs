@@ -24,18 +24,19 @@
                         <input type="text" name="name" id="name" placeholder="Naam">
                     </label>
                     <label for="email">
-                        <input type="text" name="email" id="name" placeholder="Email">
+                        <input type="email" name="email" id="name" placeholder="Email" required>
                     </label>
             
                     <label for="message">
-                        <textarea name="message" id="message" cols="30" rows="5" placeholder="Bericht"></textarea>
+                        <textarea name="message" id="message" cols="30" rows="5" placeholder="Bericht" required minlength="30"></textarea>
                     </label>
+
+                    <button class="btn contactButton" type="submit">
+                        Verstuur
+                        <i class='bx bx-paper-plane'
+                           id="planeIcon"></i>
+                    </button>
                 </form>
-                <button class="btn contactButton">
-                    Verstuur
-                    <i class='bx bx-paper-plane'
-                       id="planeIcon"></i>
-                </button>
             </article>
         </div>
     </section>
