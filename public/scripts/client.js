@@ -1,33 +1,30 @@
 // Functie voor de 'Initiatieven'
 const listVraag = document.getElementById('listVraag'),
-      listAanbod = document.getElementById('listAanbod'),
-	  vraagButton = document.getElementById('vraagButton'),
-	  aanbodButton = document.getElementById('aanbodButton'),
-	  aanbodTitle = document.getElementById('titleAanbod'),
-	  vraagTitle = document.getElementById('titleVraag')
+	listAanbod = document.getElementById('listAanbod'),
+	vraagButton = document.getElementById('vraagButton'),
+	aanbodButton = document.getElementById('aanbodButton'),
+	aanbodTitle = document.getElementById('titleAanbod'),
+	vraagTitle = document.getElementById('titleVraag')
 
 function showList(val) {
-    if(val==1) {
-        listVraag.style.display='grid'
-        listAanbod.style.display='none'
-		vraagTitle.style.display='block'
-		aanbodTitle.style.display='none'
-    } if(val==2) {
-        listVraag.style.display='none'
-        listAanbod.style.display='grid'
-		vraagTitle.style.display='none'
-		aanbodTitle.style.display='block'
-    }
+	if (val == 1) {
+		listVraag.style.display = 'grid'
+		listAanbod.style.display = 'none'
+		vraagTitle.style.display = 'block'
+		aanbodTitle.style.display = 'none'
+	} if (val == 2) {
+		listVraag.style.display = 'none'
+		listAanbod.style.display = 'grid'
+		vraagTitle.style.display = 'none'
+		aanbodTitle.style.display = 'block'
+	}
 }
 
 // Selecteer like formulier
 let form = document.querySelector('form.like')
 
 // Luister naar het submit event
-form.addEventListener('submit', function(event) {
-
-	let likebutton = document.querySelector('.like-button i')
-	likebutton.classList.add('.active-like')
+form.addEventListener('submit', function (event) {
 
 	// Het this object refereert hier naar het formulier zelf
 
@@ -55,30 +52,30 @@ form.addEventListener('submit', function(event) {
 		// https://developer.mozilla.org/en-US/docs/Web/API/URLSearchParams
 		body: new URLSearchParams(data)
 
-	}).then(function(response) {
+	}).then(function (response) {
 		// Als de server een antwoord geeft, krijgen we een stream terug
 		// We willen hiervan de text gebruiken, wat in dit geval HTML teruggeeft
 		return response.text()
 
-	}).then(function(responseHTML) {
+	}).then(function (responseHTML) {
 		// En de HTML kunnen we gebruiken om onze DOM aan te passen
 
 		//document.querySelector('body').innerHTML = responseHTML
 		//console.log(responseHTML)
-  
+
 		// Het is gelukt, neem de waarde uit de span en tel er een bij op
-		
+
 		if (document.startViewTransition) {
-			document.startViewTransition(function() {
-				document.querySelector('.likes').outerHTML = responseHTML
+			document.startViewTransition(function () {
+				document.querySelector('.heart .likes').outerHTML = responseHTML
 			});
 		} else {
-			document.querySelector('.likes').outerHTML = responseHTML
+			document.querySelector('.heart .likes').outerHTML = responseHTML
 		}
 
 		// En hier kun je bijvoorbeeld nog wat extra's doen om duidelijker te maken
 		// dat er iets gebeurd is op de pagina
-		
+
 		// Een eventuele loading state haal je hier ook weer weg
 		form.classList.remove('is-loading')
 	});
@@ -90,3 +87,16 @@ form.addEventListener('submit', function(event) {
 	// automatisch terug naar de standaard POST, wat prima is.
 	event.preventDefault()
 })
+
+const deButtons = document.querySelectorAll(".heart");
+
+function handleLikeButtonClick(event) {
+	const deButtonWaaropGekliktIs = event.currentTarget;
+
+	deButtonWaaropGekliktIs.classList.toggle("liefde");
+
+}
+
+deButtons.forEach(deButton => {
+	deButton.addEventListener("click", handleLikeButtonClick);
+});
