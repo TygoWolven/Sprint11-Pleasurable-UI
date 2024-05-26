@@ -12,6 +12,7 @@ import fetchJson from './helpers/fetch-json.js'
 const app = express()
 const baseUrl = 'https://fdnd-agency.directus.app/'
 const apiUrl = 'https://fdnd-agency.directus.app/items/dh_services'
+const questions = []
 const likes = []
 
 // Stel ejs in als template engine
@@ -82,11 +83,16 @@ app.get('/faq', function(request, response) {
 
 // Contact pagina 
 app.get('/contact', function(request, response) {
-	response.render('contact')
+	response.render('contact', {
+		questions: questions
+	})
 })
 
+app.post('/contact', function (request, response) {
+	questions.push(request.body.info)
 
-
+	response.redirect(303, '/contact')
+})
 
 // POST ROUTE VOOR DE HOMEPAGE
 app.post('/', function(request, response){
