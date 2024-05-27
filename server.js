@@ -88,15 +88,17 @@ app.get('/contact', function(request, response) {
 	})
 })
 
-app.post('/contact', function (request, response) {
+app.post('/contact', async function (request, response) {
 	questions.push(request.body.info)
+	
+	await new Promise(resolve => setTimeout(resolve, 1200))
 
 	response.redirect(303, '/contact')
 })
 
 // POST ROUTE VOOR DE HOMEPAGE
 app.post('/', function(request, response){
-	// Haal eerst de huidige gegevens voor deze service op, uit de WHOIS API
+	// Haal eerst de huidige gegevens voor deze service op, uit de WHOIS 	
 	fetchJson(`${baseUrl}items/dh_services/${request.body.id}`).then(({ data }) => {
 		// Stap 2: Sla de nieuwe data op in de API
 		// Voeg de nieuwe lijst likes toe in de WHOIS API, via een PATCH request

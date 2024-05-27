@@ -20,14 +20,14 @@ function showList(val) {
     }
 }
 
-const contactButton = document.querySelector('.contactButton'),
-	  planeIcon = document.getElementById('planeIcon')
+const planeIcon = document.getElementById('planeIcon'),
+      contactForm = document.querySelector('form.send')
 
-contactButton.addEventListener('click', startAnimation)
-function startAnimation () {
+contactForm.addEventListener('submit', startAnimation)
+
+function startAnimation (){
 	planeIcon.classList.add('planeAnimation')
 }
-
 
 // Selecteer like formulier
 let form = document.querySelector('form.like')

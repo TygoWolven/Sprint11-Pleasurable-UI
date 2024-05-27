@@ -786,6 +786,18 @@ form h3 {
     }
 }
 
+#vraagButton,
+#aanbodButton {
+    display: none;
+}
+
+@media (scripting: enabled) {
+    #vraagButton,
+    #aanbodButton {
+        display: block;
+    }
+}
+
 /* RELATED PROJECTS */
 .relatedProjects h2 {
     margin-bottom: 2rem;
