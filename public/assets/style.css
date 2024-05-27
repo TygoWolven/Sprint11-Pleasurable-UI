@@ -798,6 +798,23 @@ form h3 {
     }
 }
 
+#redirectLink {
+    color: var(--fontColorLight);
+    animation: animatedLink 2s infinite;
+}
+
+@keyframes animatedLink {
+    0% {
+        color: var(--fontColorLight);
+    }
+    50% {
+        color: var(--fontColorMedium);
+    }
+    100% {
+        color: var(--fontColorLight);
+    }
+}
+
 /* RELATED PROJECTS */
 .relatedProjects h2 {
     margin-bottom: 2rem;

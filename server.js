@@ -76,6 +76,7 @@ app.get('/opdracht-aanmelden/formulier', function(request, response) {
 app.get('/about', function(request, response) {
 	response.render('about')
 })
+
 // FAQ pagina 
 app.get('/faq', function(request, response) {
 	response.render('faq')
@@ -88,12 +89,17 @@ app.get('/contact', function(request, response) {
 	})
 })
 
+// Completed pagina 
+app.get('/completed', async function(request, response) {
+	response.render('completed')
+})
+
 app.post('/contact', async function (request, response) {
 	questions.push(request.body.info)
 	
 	await new Promise(resolve => setTimeout(resolve, 1200))
 
-	response.redirect(303, '/contact')
+	response.redirect(303, '/completed')
 })
 
 // POST ROUTE VOOR DE HOMEPAGE
