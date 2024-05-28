@@ -21,7 +21,7 @@ function showList(val) {
 }
 
 const planeIcon = document.getElementById('planeIcon'),
-      contactForm = document.querySelector('form.send')
+	  contactForm = document.querySelector('form.send')
 
 contactForm.addEventListener('submit', startAnimation)
 

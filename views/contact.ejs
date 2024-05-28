@@ -20,16 +20,30 @@
 
             <article>
                 <form method="POST" action="/contact" class="send">
+
                     <label for="name">
-                        <input type="text" name="info" id="name" placeholder="Naam">
+                        <span class="label-text">
+                            Naam
+                        </span>
                     </label>
+                    <input type="text" id="name" placeholder=" " required>
+                    <p class="validation-error">Je naam is verplicht.</p>
+
                     <label for="email">
-                        <input type="email" name="info" id="name" placeholder="Email" required>
+                        <span class="label-text">
+                            Email
+                        </span>
                     </label>
-            
+                    <input type="email" id="email" placeholder=" " required>
+                    <p class="validation-error">Vul en correct e-mailadres in.</p>
+
                     <label for="message">
-                        <textarea name="info" id="message" cols="30" rows="5" placeholder="Bericht" required minlength="30"></textarea>
+                        <span class="label-text">
+                            Bericht
+                        </span>
                     </label>
+                    <textarea id="message" cols="30" rows="5" placeholder=" " required minlength="30"></textarea>
+                    <p class="validation-error">Gebruik minimaal 30 tekens.</p>
 
                     <button class="btn contactButton" type="submit">
                         Verstuur

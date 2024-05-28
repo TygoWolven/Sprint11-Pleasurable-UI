@@ -753,6 +753,8 @@ form h3 {
 }
 /* END CONTACT BLOCK */
 
+/*##################### START OF TYGO's CODE #####################*/
+
 /* Animated Paper Airplane */
 .contactButton {
     overflow: hidden;
@@ -814,6 +816,35 @@ form h3 {
         color: var(--fontColorLight);
     }
 }
+
+.contact form.send input,
+.contact form.send textarea {
+    margin-bottom: 0;
+}
+
+.contact input:valid {
+    border: 5px solid var(--mainColor);
+}
+.validation-error {
+    opacity: 0;
+    margin-left: 1em;
+    padding: 0 16px;
+    width: fit-content;
+    border-radius: 0 0 5px 5px;
+
+    color: var(--lightBackground);
+    background: darkred;
+}
+
+.red-border {
+    border: 5px solid darkred;
+}
+
+.show-error {
+    opacity: 1;
+}
+
+/*###################### END OF TYGO's CODE ######################*/
 
 /* RELATED PROJECTS */
 .relatedProjects h2 {
