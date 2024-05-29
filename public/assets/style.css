@@ -631,6 +631,7 @@ label input[type="checkbox"] {
 label span {
     display: block;
     background: rgb(215, 215, 215);
+    color: rgb(120, 120, 120);
     padding: .75rem 1rem;
     border-radius: 4px;
     width: 100%;
@@ -639,6 +640,7 @@ label span {
 }
 label span:hover {
     background: rgb(166, 166, 166);
+    color: black;
 }
 input:checked + span {
     background: var(--mainColor);
