@@ -144,6 +144,8 @@ section>h4 {
 
 .title {
     color: var(--mainColor);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 3.5rem;
 }
 
 .padding5 {
@@ -226,7 +228,7 @@ form button {
 
 .container {
     max-width: 80%;
-    margin: 0 auto;
+    margin: 0 6rem;
 }
 
 .smallContainer {
@@ -350,7 +352,7 @@ header.home {
 
 header.home article {
     position: relative;
-    padding: 0 4rem;
+    padding: 0 6rem;
 
     grid-column: 1;
     grid-row: span 2;
@@ -375,7 +377,7 @@ header.home div:nth-child(2) img {
 article:has(blockquote) {
     width: 100%;
     padding: 6rem 0rem;
-    background-color: var(--lightBackground);
+    background-color: rgb(198, 230, 209);
     color: #0C0C0C;
 
     display: flex;
@@ -384,10 +386,13 @@ article:has(blockquote) {
 }
 
 blockquote {
-    width: 60%;
-    font-size: 2rem;
+    width: 70%;
+    text-wrap: balance;
+    font-size: 1.8rem;
     text-align: center;
-    line-height: 3.5rem;
+    line-height: 3rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 1px;
 }
 
 /* END BLOCKQUOTE */
@@ -436,11 +441,36 @@ article span {
     position: relative;
     border-radius: 4px;
     overflow: hidden;
-    transition: all .2s ease-in-out;
+    border: solid var(--mainColor) 0.2em;
+    border-radius: 20px;
+    padding: 1em;
+    height: 500px;
 }
 
 .services .items article:hover {
-    transform: scale(1.1);
+    animation: tilt-n-move-shaking 0.5s;
+}
+
+@keyframes tilt-n-move-shaking {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+    }
+
+    25% {
+        transform: translate(1px, 1px) rotate(1deg);
+    }
+
+    50% {
+        transform: translate(0, 0) rotate(0eg);
+    }
+
+    75% {
+        transform: translate(-1px, 1px) rotate(-1deg);
+    }
+
+    100% {
+        transform: translate(0, 0) rotate(0deg);
+    }
 }
 
 .services .items article>img:first-of-type,
@@ -566,7 +596,7 @@ form.like span {
 /* END LIKE BUTTON */
 
 .buttonsService {
-    width: 60%;
+    width: 80%;
     margin: 0 auto;
     margin-top: 1.5rem;
     text-align: center;
