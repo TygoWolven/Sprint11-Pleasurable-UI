@@ -840,6 +840,10 @@ form h3 {
 .contact input:valid {
     border: 5px solid var(--mainColor);
 }
+.contact textarea:valid {
+    border: 5px solid var(--mainColor);
+}
+
 .validation-error {
     opacity: 0;
     margin-left: 1em;
