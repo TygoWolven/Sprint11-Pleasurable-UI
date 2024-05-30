@@ -85,6 +85,11 @@ app.get('/contact', function(request, response) {
 	response.render('contact')
 })
 
+// Contact pagina 
+app.get('/succes', function(request, response) {
+	response.render('succes')
+})
+
 
 
 

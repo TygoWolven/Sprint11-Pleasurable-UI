@@ -90,3 +90,35 @@ form.addEventListener('submit', function(event) {
 	// automatisch terug naar de standaard POST, wat prima is.
 	event.preventDefault()
 })
+
+
+
+
+// FORM STEPS
+function showNextFieldset(currentStepId, nextStepId) {
+    const currentStep = document.getElementById(currentStepId);
+    const nextStep = document.getElementById(nextStepId);
+    
+    // Controleer valid van de velden binnen de huidige fieldset
+    const currentStepFields = currentStep.querySelectorAll(':required');
+    let isValid = true;
+    currentStepFields.forEach(field => {
+        if (!field.checkValidity()) {
+            isValid = false;
+            field.focus();
+        }
+    });
+    
+    // Ga alleen naar de volgende stap als alle velden binnen de huidige fieldset geldig zijn
+    if (isValid) {
+        currentStep.classList.remove('visible');
+        nextStep.classList.add('visible');
+    }
+}
+
+  function showPreviousFieldset(previousStepId, currentStepId) {
+	const previousStep = document.getElementById(previousStepId);
+	const currentStep = document.getElementById(currentStepId);
+	previousStep.classList.add('visible');
+	currentStep.classList.remove('visible');
+  }

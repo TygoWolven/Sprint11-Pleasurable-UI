@@ -31,6 +31,10 @@ select {
     --mainColorHover: #2b3f26;
     --redColor: rgb(200, 0, 0);
 
+    /* Form Colors */
+    --validColor: #43dd93;
+    --invalidColor: #e25f41;
+
     /* Background Colors */
     --lightBackground: #efefef;
 
@@ -575,10 +579,18 @@ ul.breadcrumb {
 form {
     grid-column: 2;
 }
+/* op display none voor de formulier steps */
 fieldset {
+    position: relative;
+    display: none;
+    flex-direction: column;
     border: none;
     font-size: 1em;
     padding: 1rem 0;
+}
+/* wanneer class visible krijgt > veranderd de display naar flex */
+fieldset.visible {
+    display: flex;
 }
 fieldset > div:first-of-type {
     display: flex;
@@ -589,6 +601,21 @@ fieldset > div:first-of-type {
 fieldset div:first-child legend {
     order: 2;
 }
+fieldset:valid::before {
+    /* content: "✅"; */
+    content: "👍";
+    position: absolute;
+    top: 2rem;
+    right: 0;
+    font-size: 3rem;
+}
+fieldset:valid legend {
+    color: var(--validColor);
+}   
+/* fieldset:focus-within {
+    box-shadow: 0 0 20px 5px rgba(0, 0, 0, .1);
+    scale: 1.02;
+} */
 legend {
     text-align: center;
     width: 100%;
@@ -600,7 +627,7 @@ legend {
 label,
 legend {
     display: inline-block;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 input,
 textarea,
@@ -630,7 +657,7 @@ label input[type="checkbox"] {
 }
 label span {
     display: block;
-    background: rgb(215, 215, 215);
+    background: var(--lightBackground);
     padding: .75rem 1rem;
     border-radius: 4px;
     width: 100%;
@@ -649,13 +676,10 @@ label.req:before {
     content: '* ';
     color: red;
 }
-input:required,
-textarea:required {
-    border: 1px solid red;
-}
-#aanmeldForm input:valid,
-#aanmeldForm textarea:valid {
-    border: 1px solid green;
+#aanmeldForm input:required:valid,
+#aanmeldForm textarea:valid,
+#aanmeldForm select:valid {
+    border: 2px solid var(--validColor);
 }
 form h3 {
     text-align: center;
@@ -666,6 +690,30 @@ form h3 {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+}
+form button.btnNext,
+form button.btnBack  {
+    align-self: flex-end;
+    width: max-content;
+}
+fieldset:valid button.btnNext {
+    background-color: var(--validColor);
+    transition: .25s;
+}
+fieldset:valid button.btnNext:hover {
+   scale: 1.05;
+}
+fieldset:valid .smallTitle span {
+    font-weight: 400;
+    color: var(--validColor);
+}
+fieldset:valid button {
+    background: var(--validColor)
+}
+.containerButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 /* END FORMULIER  */
 
@@ -792,7 +840,8 @@ header.smallHeader {
 
 
 /* CONTACT */
-header.contact {
+header.contact,
+.oneHeader {
     position: relative;
     width: 100%;
     height: calc(100vh - 4rem);
@@ -800,7 +849,7 @@ header.contact {
 .contact section {
     height: 100%;
 }
-.contact section div {
+.contact section div{
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
@@ -924,7 +973,24 @@ footer ul.socials li {
 }
 /* END FOOTER */
 
+/* SUCCES PAGE */
+.oneHeader section.container {
+    height: 100%;
+}
+.oneHeader section div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
 
+    text-align: center;
+
+    width: 100%;
+    height: 100%;
+    padding: 4rem 0;
+}
+/* END SUCCES PAGE */
 
 
 
