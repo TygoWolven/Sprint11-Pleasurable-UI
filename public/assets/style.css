@@ -216,6 +216,7 @@ form button {
     text-transform: uppercase;
     background: none;
     font-size: 1rem;
+    font-weight: 600;
 
     transition: 0.5s ease;
     position: relative;
@@ -795,12 +796,24 @@ form h3 {
     display: none;
 }
 
+/* If scripting is enabled */
 @media (scripting: enabled) {
     #vraagButton,
     #aanbodButton {
         display: block;
     }
-}
+
+    .fade-in {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: 0.5s ease;
+    }
+  
+    .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+  }
 
 #redirectLink {
     color: var(--fontColorLight);

@@ -2,7 +2,7 @@
     <!-- Laat alleen de service zien als het type een vraag is -->
     <% if (service.type == 'vraag' ) { %>
 
-        <article>
+        <article class="fade-in">
             <% if (service.image) { %>
                 <picture>
                     <source srcset="https://fdnd-agency.directus.app/assets/<%= service.image %>?format=avif" type="image/avif">

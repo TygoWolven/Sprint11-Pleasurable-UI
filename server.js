@@ -121,7 +121,7 @@ app.post('/', function(request, response){
 			if(request.body.enhanced) {
 				response.render('partials/likes', {service: {likes: data.likes + 1}})
 			} else {
-				response.redirect(303, '/')
+				response.redirect(303, `/vraag-aanbod/${request.body.id}`)
 			}
 		
 		})
