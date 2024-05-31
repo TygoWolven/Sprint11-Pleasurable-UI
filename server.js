@@ -89,10 +89,17 @@ app.get('/contact', function(request, response) {
 	})
 })
 
+
+// Succes pagina 
+app.get('/succes', function(request, response) {
+	response.render('succes')
+})
+
 // Completed pagina 
 app.get('/completed', async function(request, response) {
 	response.render('completed')
 })
+
 
 app.post('/contact', async function (request, response) {
 	questions.push(request.body.info)
