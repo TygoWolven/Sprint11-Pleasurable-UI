@@ -20,6 +20,27 @@ function showList(val) {
     }
 }
 
+// Fade in Effect on scroll
+document.querySelectorAll('.fade-in').forEach(function(fadeElement) {
+    new IntersectionObserver(function(entries, observer) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 }).observe(fadeElement);
+});
+
+const planeIcon = document.getElementById('planeIcon'),
+	  contactForm = document.querySelector('form.send')
+
+contactForm.addEventListener('submit', startAnimation)
+
+function startAnimation (){
+	planeIcon.classList.add('planeAnimation')
+}
+
 // Selecteer like formulier
 let form = document.querySelector('form.like')
 

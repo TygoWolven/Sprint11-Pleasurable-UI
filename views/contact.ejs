@@ -19,19 +19,37 @@
             </article>
 
             <article>
-                <form action="">
+                <form method="POST" action="/contact" class="send">
+
                     <label for="name">
-                        <input type="text" name="name" id="name" placeholder="Naam">
+                        <span class="label-text">
+                            Naam
+                        </span>
                     </label>
+                    <input type="text" id="name" placeholder=" " required>
+                    <p class="validation-error">Je naam is verplicht.</p>
+
                     <label for="email">
-                        <input type="text" name="email" id="name" placeholder="Email">
+                        <span class="label-text">
+                            Email
+                        </span>
                     </label>
-            
+                    <input type="email" id="email" placeholder=" " required>
+                    <p class="validation-error">Vul en correct e-mailadres in.</p>
+
                     <label for="message">
-                        <textarea name="message" id="message" cols="30" rows="5" placeholder="Bericht"></textarea>
+                        <span class="label-text">
+                            Bericht
+                        </span>
                     </label>
-        
-                    <button class="btn" type="submit">Verstuur</button>
+                    <textarea id="message" cols="30" rows="5" placeholder=" " required minlength="30"></textarea>
+                    <p class="validation-error">Gebruik minimaal 30 tekens.</p>
+
+                    <button class="btn contactButton" type="submit">
+                        Verstuur
+                        <i class='bx bx-paper-plane'
+                           id="planeIcon"></i>
+                    </button>
                 </form>
             </article>
         </div>
