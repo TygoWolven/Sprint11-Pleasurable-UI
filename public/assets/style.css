@@ -612,10 +612,6 @@ fieldset:valid::before {
 fieldset:valid legend {
     color: var(--validColor);
 }   
-/* fieldset:focus-within {
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, .1);
-    scale: 1.02;
-} */
 legend {
     text-align: center;
     width: 100%;
