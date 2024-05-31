@@ -1,65 +1,76 @@
-<%- include('./partials/head', {current: '/vraag-aanbod'}); %>
+<%- include('./partials/head', {current: '/vraag-aanbod' }); %>
 
-<header class="smallHeader">
-    <h1 class="title">Vraag & Aanbod</h1>
-</header>
+    <header class="smallHeader">
+        <h1 class="title">Vraag & Aanbod</h1>
+    </header>
 
-<ul class="breadcrumb">
-    <li><a href="/">Home</a></li>
-    <li>Vraag en aanbod</li>
-</ul>
+    <ul class="breadcrumb">
+        <li><a href="/">Home</a></li>
+        <li>Vraag en aanbod</li>
+    </ul>
 
-<main class="mBottom">
-    <section class="services container">
-        
-        <section class="vraagContent">
-            <h2 class="mTop">Vraag</h2>
+    <main class="mBottom">
+        <section class="services container">
 
-            <div class="items">
+            <section class="vraagContent">
+                <h2 class="mTop">Vraag</h2>
 
-                <%- include('./partials/serviceVraag') %>    
-                    
-            </div>
-        </section>    
+                <div class="items">
+
+                    <%- include('./partials/serviceVraag') %>
+
+                </div>
+            </section>
 
 
-        <section>
-            <h2 class="mTop">Aanbod</h2>
-            
-            <div class="items">
-                <% services.forEach(function(service) { %>
-                    <!-- Laat alleen de service zien als het type een vraag is -->
-                    <% if (service.type == 'aanbod' ) { %>
-    
-                        <article>
-                            <% if (service.image) { %>
+            <section>
+                <h2 class="mTop">Aanbod</h2>
 
-                                <picture>
-                                    <source srcset="https://fdnd-agency.directus.app/assets/<%= service.image %>?format=avif" type="image/avif">
-                                    <source srcset="https://fdnd-agency.directus.app/assets/<%= service.image %>?format=webp" type="image/webp">
-                                    <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>" alt="<%= service.title %> Image">
-                                </picture>
+                <div class="items">
+                    <% services.forEach(function(service) { %>
+                        <!-- Laat alleen de service zien als het type een vraag is -->
+                        <% if (service.type=='aanbod' ) { %>
 
+                            <a href="/vraag-aanbod/<%= service.id %>">
+                                <article>
+                                    <% if (service.image) { %>
+
+                                        <picture>
+                                            <source
+                                                srcset="https://fdnd-agency.directus.app/assets/<%= service.image %>?format=avif"
+                                                type="image/avif">
+                                            <source
+                                                srcset="https://fdnd-agency.directus.app/assets/<%= service.image %>?format=webp"
+                                                type="image/webp">
+                                            <img src="https://fdnd-agency.directus.app/assets/<%= service.image %>"
+                                                alt="<%= service.title %> Image">
+                                        </picture>
+
+                                        <% } %>
+
+                                            <div class="cardContent">
+                                                <h3>
+                                                    <%= service.title %>
+                                                </h3>
+
+                                                <% if (service.start_date) { %>
+                                                    <p>
+                                                        <span>
+                                                            <%= service.start_date %> - <%= service.end_date %>
+                                                        </span>
+                                                    </p>
+                                                    <% } %>
+
+                                                        <p><%- service.short_description %></p>
+                                            </div>
+                                </article>
+                            </a>
                             <% } %>
-                            
-                            <div class="cardContent">
-                                <a href="/vraag-aanbod/<%= service.id %>"><h3><%= service.title %></h3></a>
-                               
-                                <% if (service.start_date) { %>
-                                    <p>
-                                        <span><%= service.start_date %> - <%= service.end_date %></span>
-                                    </p>
-                                <% } %>
-                                
-                                <p><%- service.short_description %></p>
-                            </div>
-                        </article>
-                    <% } %>
-                <% }) %>
-            </div>
-        </section>   
-    
-    </section>    
-</main>
+                                <% }) %>
+                </div>
+            </section>
 
-<%- include('./partials/foot') %>
+        </section>
+    </main>
+
+    <%- include('./partials/foot') %>
