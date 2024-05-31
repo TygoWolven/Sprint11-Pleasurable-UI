@@ -602,7 +602,6 @@ fieldset div:first-child legend {
     order: 2;
 }
 fieldset:valid::before {
-    /* content: "✅"; */
     content: "👍";
     position: absolute;
     top: 2rem;
@@ -670,7 +669,7 @@ input:checked + span {
 
 label.req:before {
     content: '* ';
-    color: red;
+    color: var(--invalidColor);
 }
 #aanmeldForm input:required:valid,
 #aanmeldForm textarea:valid,
