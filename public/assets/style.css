@@ -692,7 +692,8 @@ form h3 {
     gap: 1.5rem;
 }
 form button.btnNext,
-form button.btnBack  {
+form button.btnBack,
+#aanmeldForm .btn {
     align-self: flex-end;
     width: max-content;
 }
@@ -714,6 +715,16 @@ fieldset:valid button {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+.noJs fieldset {
+    display: block;
+}
+.noJs .btnNext,
+.noJs .btnBack {
+    display: none;
+}
+.noJs #aanmeldForm .btn {
+    width: 100%;
 }
 /* END FORMULIER  */
 
@@ -989,6 +1000,9 @@ footer ul.socials li {
     width: 100%;
     height: 100%;
     padding: 4rem 0;
+}
+.succes h1 {
+    color: var(--validColor);
 }
 /* END SUCCES PAGE */
 

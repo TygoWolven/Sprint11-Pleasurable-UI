@@ -12,7 +12,7 @@
 </ul>
 
 
-<main>
+<main class="noJs">
     <section class="container padding5">
         <div class="gridForm">
             <form id="aanmeldForm" method="POST" action="/succes" >
@@ -22,7 +22,7 @@
                         <legend>Persoonlijke gegevens</legend>
                         <h3 class="smallTitle"><span>Stap 1</span> / 3</h3>
                     </div>
-                   
+                    
                     <div class="col2">
                         <div>
                             <label class="req" for="name">Voornaam</label>
@@ -35,10 +35,10 @@
                         </div>
                     </div>
                     
-        
+
                     <label class="req" for="email">E-mail</label>
                     <input type="email" name="email" id="email" placeholder="naam@email.com" required>
-        
+
                     <label class="req" for="vraagAanbod">Vraag of aanbod?</label>
 
                         <div>
@@ -51,7 +51,7 @@
                             <label for="aanbod">Aanbod</label>
                         </div>
                     
-        
+
                     <label class="req" for="buurt-select">In welke buurt woont u?:</label>
                     <div class="col2">
                         <select name="buurt" id="buurt-select" required>
@@ -67,23 +67,23 @@
                     <button type="button" class="btn btnNext" onclick="showNextFieldset('step1', 'step2')">Volgende stap</button>
 
                 </fieldset>
-        
+
                 <fieldset id="step2">
                     <div>
                         <legend>Initiatief informatie</legend>
                         <h3 class="smallTitle"><span>Stap 2</span> / 3</h3>
                     </div>
-        
+
                     <label class="req" for="name">
                         Titel initiatief
                     </label>
                     <input type="text" name="titel" placeholder="Titel initiatief" minlength="2" required>
-        
+
                     <label class="req" for="description">
                         Beschrijf uw initiatief
                     </label>
                     <textarea name="description" id="description" cols="30" rows="10" minlength="5" placeholder="Beschrijf uw initiatief" required></textarea>
-        
+
                     <label for="category">Kies uw categoriën:</label>
                     <div>
                         <label for="tuin"><input type="checkbox" name="category" id="tuin" value="Tuin"><span>Tuin</span></label>
@@ -106,18 +106,18 @@
                         <!-- NEXT BUTTON -->
                         <button type="button" class="btn btnNext" onclick="showNextFieldset('step2', 'step3')">Volgende stap</button>
                     </div>
-                   
+                    
                 </fieldset>
                     
 
                 </fieldset>
-        
+
                 <fieldset id="step3">
                     <div>
                         <legend>Locatie en tijd</legend>
                         <h3 class="smallTitle"><span>Stap 3 / 3</span></h3>
                     </div>
-        
+
                     <div class="col2">
                         <div>
                             <label class="req" for="start">Start datum:</label>
@@ -128,7 +128,7 @@
                             <input type="date" id="endDate" name="trip-end" required min="20-05-2024"/>
                         </div>   
                     </div>
-                   
+                    
 
                     <div class="col2">
                         <div>
@@ -142,14 +142,14 @@
                     </div>
 
                     <div class="containerButtons">
-                         <!-- BACK BUTTON -->
+                            <!-- BACK BUTTON -->
                         <button type="button" class="btn btnBack" onclick="showPreviousFieldset('step2', 'step3')">Terug</button>
-                         <!-- SEND BUTTON -->
-                        <button type="submit" class="btn btnNext">Verzend</button>
+                            <!-- SEND BUTTON -->
+                        <button type="submit" class="btn">Verzend</button>
                     </div>
 
                 </fieldset>
-        
+
             </form>
         </div>
     </section>
